@@ -62,14 +62,14 @@ const examples = [
     afterImage: "/div3.jpeg",
   },
   {
-    title: "Уборка помещения",
-    description: "Комплексная уборка квартиры после ремонта",
+    title: "Химчистка дивана",
+    description: "Удаление сложных пятен и загрязнений с мягкой мебели",
     beforeImage: "/placeholder.svg?height=300&width=400",
     afterImage: "/placeholder.svg?height=300&width=400",
   },
   {
-    title: "Мойка окон",
-    description: "Профессиональная мойка окон и витрин",
+    title: "Химчистка дивана",
+    description: "Удаление сложных пятен и загрязнений с мягкой мебели",
     beforeImage: "/placeholder.svg?height=300&width=400",
     afterImage: "/placeholder.svg?height=300&width=400",
   },
