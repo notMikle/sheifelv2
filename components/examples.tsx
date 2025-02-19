@@ -19,20 +19,58 @@ const examples = [
     {
         title: "Химчистка дивана",
         description: "Удаление сложных пятен и загрязнений с мягкой мебели",
-        beforeImage: "/div2.jpeg",
-        afterImage: "/div3.jpeg",
+        beforeImage: "/1.1.jpg",
+        afterImage: "/1.jpg",
     },
     {
         title: "Химчистка дивана",
         description: "Удаление сложных пятен и загрязнений с мягкой мебели",
-        beforeImage: "/placeholder.svg?height=300&width=400",
-        afterImage: "/placeholder.svg?height=300&width=400",
+        beforeImage: "/2.1.jpg",
+        afterImage: "/2.jpg",
     },
     {
         title: "Химчистка дивана",
         description: "Удаление сложных пятен и загрязнений с мягкой мебели",
-        beforeImage: "/placeholder.svg?height=300&width=400",
-        afterImage: "/placeholder.svg?height=300&width=400",
+        beforeImage: "/3.1.jpg",
+        afterImage: "/3.jpg",
+    },
+    {
+        title: "Химчистка дивана",
+        description: "Удаление сложных пятен и загрязнений с мягкой мебели",
+        beforeImage: "/4.1.jpg",
+        afterImage: "/4.jpg",
+    },
+    {
+        title: "Химчистка дивана",
+        description: "Удаление сложных пятен и загрязнений с мягкой мебели",
+        beforeImage: "/5.1.jpg",
+        afterImage: "/5.jpg",
+    },
+    {
+        title: "Химчистка дивана",
+        description: "Удаление сложных пятен и загрязнений с мягкой мебели",
+        beforeImage: "/6.1.jpg",
+        afterImage: "/6.jpg",
+    },{
+        title: "Химчистка дивана",
+        description: "Удаление сложных пятен и загрязнений с мягкой мебели",
+        beforeImage: "/7.1.jpg",
+        afterImage: "/7.jpg",
+    },{
+        title: "Химчистка дивана",
+        description: "Удаление сложных пятен и загрязнений с мягкой мебели",
+        beforeImage: "/8.1.jpg",
+        afterImage: "/8.jpg",
+    },{
+        title: "Химчистка дивана",
+        description: "Удаление сложных пятен и загрязнений с мягкой мебели",
+        beforeImage: "/9.1.jpg",
+        afterImage: "/9.jpg",
+    },{
+        title: "Химчистка дивана",
+        description: "Удаление сложных пятен и загрязнений с мягкой мебели",
+        beforeImage: "/10.1.jpg",
+        afterImage: "/10.jpg",
     },
 ]
 
@@ -53,7 +91,7 @@ export const Examples: React.FC = () => {
                 </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 flex-wrap">
                 {examples.map((example) => (
                     <motion.div
                         key={example.title}
