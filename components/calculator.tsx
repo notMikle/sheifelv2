@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
 import Link from "next/link"
+import axios from "axios";
 
 interface Service {
   id: string
@@ -18,14 +19,14 @@ interface Service {
 }
 
 const services: Service[] = [
-  { id: "window1", title: "Диван двухместный", icon: "/div2.jpeg", pricePerUnit: 500 },
-  { id: "window2", title: "Диван трехместный", icon: "/div3.jpeg", pricePerUnit: 800 },
-  { id: "balcony", title: "Диван угловой", icon: "/div444.jpeg", pricePerUnit: 1000 },
-  { id: "fridge", title: "Кресло", icon: "/kreslo.jpeg", pricePerUnit: 600 },
-  { id: "oven", title: "Стул", icon: "/styl3.jpeg", pricePerUnit: 700 },
+  { id: "window1", title: "Диван двухместный", icon: "/div2.jpeg", pricePerUnit: 2000 },
+  { id: "window2", title: "Диван трехместный", icon: "/div3.jpeg", pricePerUnit: 2500 },
+  { id: "balcony", title: "Диван угловой", icon: "/div444.jpeg", pricePerUnit: 2500 },
+  { id: "fridge", title: "Кресло", icon: "/kreslo.jpeg", pricePerUnit: 500 },
+  { id: "oven", title: "Стул", icon: "/styl3.jpeg", pricePerUnit: 300 },
   { id: "microwave", title: "Подушка", icon: "/podushka.jpeg", pricePerUnit: 400 },
-  { id: "iron", title: "Матрас", icon: "/matras.jpeg", pricePerUnit: 300 },
-  { id: "stove", title: "Ковер или ковролин за м²", icon: "/kover2.jpeg", pricePerUnit: 500 },
+  { id: "iron", title: "Матрас", icon: "/matras.jpeg", pricePerUnit: 1500 },
+  { id: "stove", title: "Ковер или ковролин за м²", icon: "/kover2.jpeg", pricePerUnit: 300 },
 ]
 
 export function Calculator() {
@@ -50,6 +51,8 @@ export function Calculator() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    const token = '7798116161:AAEp6GvvLoLuPbytzNACkqvHwTn_xeRgl-Y'
+
 
     // Here you would typically send the data to your backend
     console.log({
@@ -61,7 +64,25 @@ export function Calculator() {
         })),
       totalPrice,
       ...formData,
+
     })
+    await axios.post(`https://api.telegram.org/bot${token}/sendMessage`, {
+      chat_id: '347996326',
+      parse_mode: 'html',
+      text: `
+            На сайте оставили заявку!
+            Имя: ${formData.name} 
+            Телефон: ${formData.phone} 
+            Заказ: 
+            Сумма: ${totalPrice}
+            Химчистка: ${Object.entries(quantities)
+            .filter(([_, quantity]) => quantity > 0)
+            .map(([serviceId, quantity]) => ({
+             service: services.find((s) => s.id === serviceId)?.title,
+             quantity,
+             })).reduce((acc,item)=>item.service + ' - ' + item.quantity +'; ' + acc,'')}
+            `
+    });
 
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1000))
@@ -142,7 +163,6 @@ export function Calculator() {
                     <Input
                       required
                       type="tel"
-                      pattern="\+7 $$[0-9]{3}$$ [0-9]{3}-[0-9]{2}-[0-9]{2}"
                       placeholder="+7 (___) ___-__-__"
                       value={formData.phone}
                       onChange={(e) => setFormData((prev) => ({ ...prev, phone: e.target.value }))}
