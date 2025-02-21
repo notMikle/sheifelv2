@@ -90,7 +90,7 @@ const services: Service[] = [
   }
 
   return (
-    <section className="py-12 md:py-16 px-4  dark:bg-gray-900" id="прайс-лист">
+    <section className="py-12 md:py-16 dark:bg-gray-900" id="прайс-лист">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
