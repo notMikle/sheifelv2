@@ -37,27 +37,27 @@ const clients = [
 ]
 
 
-export const Clients: React.FC = () => {
-    const [api, setApi] = useState<any>()
+ const Clients: React.FC = () => {
+    // const [api, setApi] = useState<any>()
     const [current, setCurrent] = useState(0)
     const [count, setCount] = useState(0)
-    useEffect(() => {
-        if (!api) return
-
-        setCount(api.scrollSnapList().length)
-        setCurrent(api.selectedScrollSnap() + 1)
-
-        api.on("select", () => {
-            setCurrent(api.selectedScrollSnap() + 1)
-        })
-
-        // Auto-scroll
-        const autoScroll = setInterval(() => {
-            api.next()
-        }, 5000)
-
-        return () => clearInterval(autoScroll)
-    }, [api])
+    // useEffect(() => {
+    //     if (!api) return
+    //
+    //     setCount(api.scrollSnapList().length)
+    //     setCurrent(api.selectedScrollSnap() + 1)
+    //
+    //     api.on("select", () => {
+    //         setCurrent(api.selectedScrollSnap() + 1)
+    //     })
+    //
+    //     // Auto-scroll
+    //     const autoScroll = setInterval(() => {
+    //         api.next()
+    //     }, 2000)
+    //
+    //     return () => clearInterval(autoScroll)
+    // }, [api])
     return (
         <motion.section
             initial="initial"
@@ -75,7 +75,7 @@ export const Clients: React.FC = () => {
             </motion.div>
 
             <Carousel
-                setApi={setApi}
+                // setApi={setApi}
                 className="w-full max-w-5xl mx-auto"
                 opts={{
                     align: "start",
@@ -109,3 +109,4 @@ export const Clients: React.FC = () => {
 
     );
 }
+export default Clients

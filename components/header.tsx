@@ -33,6 +33,7 @@ export const Header: React.FC = () => {
                         <Link
                             href={`#first`}
                             className="hover:opacity-80 transition-opacity text-lg md:text-lg font-bold"
+                            aria-label='homeLogo'
                         >
                             <Image
                                 src="/logo1.png"
@@ -55,6 +56,7 @@ export const Header: React.FC = () => {
                                 <Link
                                     href={`#${item.toLowerCase().replace(" ", "-")}`}
                                     className="hover:opacity-80 transition-opacity text-lg md:text-lg font-bold"
+                                    aria-label={item}
                                 >
                                     {item}
                                 </Link>
@@ -75,7 +77,9 @@ export const Header: React.FC = () => {
 
 
 
-                        <a href="tel:+79205936571" className="hover:opacity-80 transition-opacity md:text-lg font-bold">
+                        <a href="tel:+79205936571" className="hover:opacity-80 transition-opacity md:text-lg font-bold"
+                        aria-label='phone'
+                        >
                             +7 (920) 593-65-71
                         </a>
                     </motion.div>
@@ -104,15 +108,15 @@ export const Header: React.FC = () => {
                                     </Link>
                                 ))}
                                 <div className=" flex flex-col pt-4 gap-2.5 border-t">
-                                    <a href="tel:+79205936571" className="flex items-center gap-2 text-lg">
+                                    <a href="tel:+79205936571" className="flex items-center gap-2 text-lg" aria-label='phone'>
                                         <FaPhone className="w-6 h-6"/>
                                         +7 (920) 593-65-71
                                     </a>
-                                    <a href="tel:+79205936571" className="flex items-center gap-2 text-lg">
+                                    <a href="tel:+79205936571" className="flex items-center gap-2 text-lg" aria-label='vk'>
                                         <FaVk className="w-7 h-7"/>
                                         Наша группа ВК
                                     </a>
-                                    <a href="tel:+79205936571" className="flex items-center gap-2 text-lg">
+                                    <a href="tel:+79205936571" className="flex items-center gap-2 text-lg" aria-label='tg'>
                                         <FaTelegramPlane className="w-7 h-7"/>
                                         Написать в Telegram
                                     </a>

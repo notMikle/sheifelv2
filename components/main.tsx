@@ -2,6 +2,7 @@ import React from 'react';
 import {motion} from "framer-motion";
 import Image from "next/image";
 
+export const dynamic = 'auto'
 const Main = () => {
     return (
         <section id='first'
@@ -23,7 +24,7 @@ const Main = () => {
                 transition={{delay: 0.5}}
                 className="container md:py-24 text-black"
             >
-                <Image src="/div2home.png" alt="" width={680} height={680}/>
+                <Image src="/div2home.webp" alt="cleaning" width={680} height={680} loading="lazy" decoding="async"/>
             </motion.div>
         </section>
     );

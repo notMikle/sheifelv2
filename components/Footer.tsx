@@ -16,7 +16,7 @@ const fadeIn = {
     animate: { opacity: 1, y: 0 },
     transition: { duration: 0.5 },
 }
-export const Footer: React.FC = () => {
+ const Footer: React.FC = () => {
     return (
         <footer className="bg-gradient-to-r from-white to-blue-300 dark:from-blue-900 dark:to-blue-950">
             <motion.div
@@ -33,7 +33,8 @@ export const Footer: React.FC = () => {
                         <p>ежедневно с 8:00 до 24:00</p>
                         <div className="mt-4">
                             <a href="tel:+79205936571"
-                               className="text-xl font-semibold hover:opacity-80 transition-opacity">
+                               className="text-xl font-semibold hover:opacity-80 transition-opacity"
+                               aria-label="phone">
                                 +7 (920) 593-65-71
                             </a>
                             {/*<Button variant="outline" className="mt-2 w-full transition-colors hover:bg-white hover:text-slate-900">*/}
@@ -46,7 +47,9 @@ export const Footer: React.FC = () => {
                         <div className="grid gap-2">
                             {["Главная", "Услуги", "Прайс-лист", "Контакты"].map((item) => (
                                 <Link key={item} href={`#${item.toLowerCase()}`}
-                                      className="hover:opacity-80 transition-opacity">
+                                      className="hover:opacity-80 transition-opacity"
+                                aria-label={item}
+                                >
                                     {item}
                                 </Link>
                             ))}
@@ -71,3 +74,4 @@ export const Footer: React.FC = () => {
         </footer>
     );
 }
+export default Footer

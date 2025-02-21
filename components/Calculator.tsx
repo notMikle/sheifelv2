@@ -8,7 +8,6 @@ import { Minus, Plus } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
-import Link from "next/link"
 import axios from "axios";
 
 interface Service {
@@ -29,7 +28,7 @@ const services: Service[] = [
   { id: "stove", title: "Ковер или ковролин за м²", icon: "/kover2.jpeg", pricePerUnit: 300 },
 ]
 
-export function Calculator() {
+ const  Calculator=()=> {
   const [quantities, setQuantities] = useState<Record<string, number>>(
     Object.fromEntries(services.map((service) => [service.id, 0])),
   )
@@ -106,7 +105,7 @@ export function Calculator() {
                 <CardContent className="p-3 md:p-4">
                   <div className="flex flex-col items-center text-center gap-2">
                     <img src={service.icon || "/placeholder.svg"} alt="" className="w-120 h-120 md:w-160 md:h-160 mb-2" />
-                    <h3 className="text-lg md:text-sm font-medium">{service.title}</h3>
+                    <p className="text-lg md:text-sm font-medium">{service.title}</p>
                     <div >
                       <div className='font-bold'>
                         {service.pricePerUnit} руб.
@@ -118,6 +117,7 @@ export function Calculator() {
                             className="h-8 w-8"
                             onClick={() => handleQuantityChange(service.id, -1)}
                             disabled={quantities[service.id] === 0}
+                            aria-label='decrement'
                         >
                           <Minus className="h-3 w-3 md:h-4 md:w-4" />
                         </Button>
@@ -127,6 +127,7 @@ export function Calculator() {
                             size="icon"
                             className="h-8 w-8"
                             onClick={() => handleQuantityChange(service.id, 1)}
+                            aria-label='increment'
                         >
                           <Plus className="h-3 w-3 md:h-4 md:w-4" />
                         </Button>
@@ -143,24 +144,26 @@ export function Calculator() {
           <div className="lg:sticky lg:top-24 h-fit">
             <Card className="bg-white dark:bg-gray-800">
               <CardContent className="p-4 md:p-6">
-                <h2 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-center">
+                <p className="text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-center">
                   Примерная стоимость уборки для вас:
-                </h2>
+                </p>
                 <p className="text-3xl md:text-4xl font-bold text-center text-blue-800 mb-6 md:mb-8">
                   {totalPrice} руб.
                 </p>
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium mb-1">Ваше имя:</label>
+                    <label className="block text-sm font-medium mb-1" htmlFor="name">Ваше имя:</label>
                     <Input
+                        id='name'
                       required
                       value={formData.name}
                       onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-1">Ваш телефон:</label>
+                    <label className="block text-sm font-medium mb-1" htmlFor="phone">Ваш телефон:</label>
                     <Input
+                        id='phone'
                       required
                       type="tel"
                       placeholder="+7 (___) ___-__-__"
@@ -172,14 +175,12 @@ export function Calculator() {
                     type="submit"
                     className="w-full bg-blue-800 hover:bg-blue-600 text-white py-2 md:py-3 text-sm md:text-base"
                     disabled={isSubmitting}
+                    aria-label='submit'
                   >
                     {isSubmitting ? "Отправка..." : "Получить бонус и узнать точную стоимость"}
                   </Button>
                   <p className="text-xs md:text-sm text-center text-gray-600 dark:text-gray-400">
-                    Я согласен с условиями политики конфиденциальности.{" "}
-                    <Link href="/privacy" className="text-blue-600 hover:underline">
-                      Подробнее.
-                    </Link>
+                    *Сильные загрязнения рассчитываются индивидуально
                   </p>
                 </form>
               </CardContent>
@@ -191,3 +192,4 @@ export function Calculator() {
   )
 }
 
+export default Calculator

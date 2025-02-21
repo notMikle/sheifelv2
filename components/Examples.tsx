@@ -74,7 +74,7 @@ const examples = [
     },
 ]
 
-export const Examples: React.FC = () => {
+ const Examples: React.FC = () => {
     return (
         <motion.section
             initial="initial"
@@ -106,3 +106,4 @@ export const Examples: React.FC = () => {
         </motion.section>
     );
 }
+export default Examples
