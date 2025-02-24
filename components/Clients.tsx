@@ -3,7 +3,6 @@ import {motion} from "framer-motion";
 import {Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious} from "@/components/ui/carousel";
 import {Card, CardContent} from "@/components/ui/card";
 import Image from "next/image";
-import {useEffect, useState} from "react";
 
 const staggerContainer = {
     animate: {
@@ -34,13 +33,20 @@ const clients = [
         name: "Газпромбанк",
         logo: "/4.png",
     },
+    {
+        name: "Ресторан Камчатка",
+        logo: "/kamchatka.png",
+    },{
+        name: "Атлетик.про",
+        logo: "/athletic.png",
+    },
 ]
 
 
  const Clients: React.FC = () => {
     // const [api, setApi] = useState<any>()
-    const [current, setCurrent] = useState(0)
-    const [count, setCount] = useState(0)
+    // const [current, setCurrent] = useState(0)
+    // const [count, setCount] = useState(0)
     // useEffect(() => {
     //     if (!api) return
     //

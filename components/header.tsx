@@ -55,7 +55,7 @@ export const Header: React.FC = () => {
                             >
                                 <Link
                                     href={`#${item.toLowerCase().replace(" ", "-")}`}
-                                    className="hover:opacity-80 transition-opacity text-lg md:text-lg font-bold"
+                                    className="hover:opacity-80 transition-opacity text-lg md:text-lg font-medium"
                                     aria-label={item}
                                 >
                                     {item}
@@ -77,7 +77,7 @@ export const Header: React.FC = () => {
 
 
 
-                        <a href="tel:+79205936571" className="hover:opacity-80 transition-opacity md:text-lg font-bold"
+                        <a href="tel:+79205936571" className="hover:opacity-80 transition-opacity md:text-lg font-medium"
                         aria-label='phone'
                         >
                             +7 (920) 593-65-71
