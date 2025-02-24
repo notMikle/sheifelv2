@@ -19,6 +19,24 @@ const examples = [
     {
         title: "Химчистка дивана",
         description: "Удаление сложных пятен и загрязнений с мягкой мебели",
+        beforeImage: "/9.1.jpg",
+        afterImage: "/9.jpg",
+    },
+    {
+        title: "Химчистка дивана",
+        description: "Удаление сложных пятен и загрязнений с мягкой мебели",
+        beforeImage: "/8.1.jpg",
+        afterImage: "/8.jpg",
+    },
+    {
+        title: "Химчистка дивана",
+        description: "Удаление сложных пятен и загрязнений с мягкой мебели",
+        beforeImage: "/10.1.jpg",
+        afterImage: "/10.jpg",
+    },
+    {
+        title: "Химчистка дивана",
+        description: "Удаление сложных пятен и загрязнений с мягкой мебели",
         beforeImage: "/1.1.jpg",
         afterImage: "/1.jpg",
     },
@@ -56,21 +74,6 @@ const examples = [
         description: "Удаление сложных пятен и загрязнений с мягкой мебели",
         beforeImage: "/7.1.jpg",
         afterImage: "/7.jpg",
-    },{
-        title: "Химчистка дивана",
-        description: "Удаление сложных пятен и загрязнений с мягкой мебели",
-        beforeImage: "/8.1.jpg",
-        afterImage: "/8.jpg",
-    },{
-        title: "Химчистка дивана",
-        description: "Удаление сложных пятен и загрязнений с мягкой мебели",
-        beforeImage: "/9.1.jpg",
-        afterImage: "/9.jpg",
-    },{
-        title: "Химчистка дивана",
-        description: "Удаление сложных пятен и загрязнений с мягкой мебели",
-        beforeImage: "/10.1.jpg",
-        afterImage: "/10.jpg",
     },
 ]
 
