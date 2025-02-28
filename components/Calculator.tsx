@@ -19,7 +19,7 @@ interface Service {
 
 const services: Service[] = [
   { id: "window1", title: "Диван двухместный", icon: "/div2.jpeg", pricePerUnit: 2000 },
-  { id: "window2", title: "Диван трехместный", icon: "/div3.jpeg", pricePerUnit: 2500 },
+  { id: "window2", title: "Диван трехместный", icon: "/div3.jpeg", pricePerUnit: 2000 },
   { id: "balcony", title: "Диван угловой", icon: "/div444.jpeg", pricePerUnit: 2500 },
   { id: "fridge", title: "Кресло", icon: "/kreslo.jpeg", pricePerUnit: 500 },
   { id: "oven", title: "Стул", icon: "/styl3.jpeg", pricePerUnit: 300 },
@@ -52,21 +52,8 @@ const services: Service[] = [
     setIsSubmitting(true)
     const token = '7798116161:AAEp6GvvLoLuPbytzNACkqvHwTn_xeRgl-Y'
 
-
-    // Here you would typically send the data to your backend
-    console.log({
-      services: Object.entries(quantities)
-        .filter(([_, quantity]) => quantity > 0)
-        .map(([serviceId, quantity]) => ({
-          service: services.find((s) => s.id === serviceId)?.title,
-          quantity,
-        })),
-      totalPrice,
-      ...formData,
-
-    })
     await axios.post(`https://api.telegram.org/bot${token}/sendMessage`, {
-      chat_id: '347996326',
+      chat_id: '880052031',
       parse_mode: 'html',
       text: `
             На сайте оставили заявку!
@@ -83,10 +70,9 @@ const services: Service[] = [
             `
     });
 
-    // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1000))
     setIsSubmitting(false)
-    // Reset form or show success message
+      setFormData({name: "", phone: ""})
   }
 
   return (
@@ -98,7 +84,6 @@ const services: Service[] = [
           viewport={{ once: true }}
           className="grid lg:grid-cols-3 gap-6 justify-center "
         >
-          {/* Services Grid */}
           <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {services.map((service) => (
               <Card key={service.id} className="bg-white dark:bg-gray-800">

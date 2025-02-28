@@ -11,9 +11,11 @@ const nunito = Roboto({
 })
 
 export const metadata: Metadata = {
-  title: "Химчистка Белгород",
-  description: "Химчистка Белгород",
-    generator: 'v0.dev'
+  title: "Химчистка мебели Белгород",
+  description: "Химчистка мебели Белгород",
+  icons: {
+    icon: '/favicon.png',
+  },
 }
 
 export default function RootLayout({
