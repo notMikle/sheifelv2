@@ -72,7 +72,7 @@ export const Header: React.FC = () => {
                         className="hidden md:flex items-center gap-3"
                     >
                         <Link href={"https://vk.com/fazisclean"}> <FaVk className="w-7 h-7"/> </Link>
-                        <Link href={"https://t.me/fazisclean"}> <FaTelegramPlane className="w-7 h-7"/> </Link>
+                        <Link href={"https://vk.com/fazisclean"}> <FaTelegramPlane className="w-7 h-7"/> </Link>
                         <Link href={"tel:+79205936571"}> <FaPhone className="w-6 h-6"/> </Link>
 
 
