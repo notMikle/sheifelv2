@@ -19,7 +19,7 @@ interface Service {
 
 const services: Service[] = [
   { id: "window1", title: "Диван двухместный", icon: "/div2.jpeg", pricePerUnit: 1500 },
-  { id: "window2", title: "Диван трехместный", icon: "/div3.jpeg", pricePerUnit: 2500 },
+  { id: "window2", title: "Диван трехместный", icon: "/div3.jpeg", pricePerUnit: 2000 },
   { id: "balcony", title: "Диван угловой", icon: "/div444.jpeg", pricePerUnit: 2500 },
   { id: "fridge", title: "Кресло", icon: "/kreslo.jpeg", pricePerUnit: 500 },
   { id: "oven", title: "Стул", icon: "/styl3.jpeg", pricePerUnit: 300 },
