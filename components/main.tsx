@@ -24,7 +24,7 @@ const Main = () => {
                 transition={{delay: 0.5}}
                 className="container md:py-24 text-black"
             >
-                <Image src="/div2home.webp" alt="cleaning" width={680} height={680} loading="lazy" decoding="async"/>
+                <Image src="/main3.webp" alt="cleaning" width={650} height={650} loading="lazy" decoding="async"/>
             </motion.div>
         </section>
     );
