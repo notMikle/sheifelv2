@@ -9,6 +9,7 @@ try {
 const nextConfig = {
   output: 'export',
 
+
   eslint: {
     ignoreDuringBuilds: true,
   },
