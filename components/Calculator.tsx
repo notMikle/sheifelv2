@@ -5,9 +5,9 @@ import type React from "react"
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { Minus, Plus } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Card, CardContent } from "@/components/ui/card"
+import { Button } from "../../../Desktop/123/components/ui/button"
+import { Input } from "../../../Desktop/123/components/ui/input"
+import { Card, CardContent } from "../../../Desktop/123/components/ui/card"
 import axios from "axios";
 
 interface Service {

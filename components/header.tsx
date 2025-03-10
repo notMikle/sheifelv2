@@ -76,9 +76,9 @@ export const Header: React.FC = () => {
                         <Link href={"tel:+79205936571"}> <FaPhone className="w-6 h-6"/> </Link>
 
 
-
-                        <a href="tel:+79205936571" className="hover:opacity-80 transition-opacity md:text-lg font-medium"
-                        aria-label='phone'
+                        <a href="tel:+79205936571"
+                           className="hover:opacity-80 transition-opacity md:text-lg font-medium"
+                           aria-label='phone'
                         >
                             +7 (920) 593-65-71
                         </a>
@@ -86,10 +86,15 @@ export const Header: React.FC = () => {
 
                     {/*<ThemeToggle />*/}
 
+                    <a href="tel:+79205936571" className="hover:opacity-80 text-center flex items-center justify-center gap-2 mr-10 transition-opacity md:hidden  font-bold"
+                       aria-label='phone'
+                    >
+                        <FaPhone className="w-4 h-4"/> +7 (920) 593-65-71
+                    </a>
                     <Sheet open={isOpen} onOpenChange={setIsOpen}>
                         <SheetTrigger asChild>
                             <Button variant="ghost" className="md:hidden text-black">
-                                <Menu className="h-20 w-20"/>
+                                <Menu className="h-30 w-50"/>
                             </Button>
                         </SheetTrigger>
                         <SheetContent side="left" className="w-[300px]">
@@ -108,15 +113,18 @@ export const Header: React.FC = () => {
                                     </Link>
                                 ))}
                                 <div className=" flex flex-col pt-4 gap-2.5 border-t">
-                                    <a href="tel:+79205936571" className="flex items-center gap-2 text-lg" aria-label='phone'>
+                                    <a href="tel:+79205936571" className="flex items-center gap-2 text-lg"
+                                       aria-label='phone'>
                                         <FaPhone className="w-6 h-6"/>
                                         +7 (920) 593-65-71
                                     </a>
-                                    <a href="tel:+79205936571" className="flex items-center gap-2 text-lg" aria-label='vk'>
+                                    <a href="tel:+79205936571" className="flex items-center gap-2 text-lg"
+                                       aria-label='vk'>
                                         <FaVk className="w-7 h-7"/>
                                         Наша группа ВК
                                     </a>
-                                    <a href="tel:+79205936571" className="flex items-center gap-2 text-lg" aria-label='tg'>
+                                    <a href="tel:+79205936571" className="flex items-center gap-2 text-lg"
+                                       aria-label='tg'>
                                         <FaTelegramPlane className="w-7 h-7"/>
                                         Написать в Telegram
                                     </a>

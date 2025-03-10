@@ -24,16 +24,19 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="ru" suppressHydrationWarning>
+      <html lang="ru" suppressHydrationWarning>
+      <meta name="description"
+            content="Профессиональная химчистка мягкой мебели в Белгороде по доступным ценам. Выезд на дом, качественная химия, индивидуальный подход."/>
+      <meta name="keywords"
+            content="химчистка мебели Белгород, химчистка диванов, химчистка мебели, химчистка мягкой мебели, Fazis Clean"/>
       <body className={`${nunito.variable} font-nunito`}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+      <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           {children}
-        </ThemeProvider>
+      </ThemeProvider>
       </body>
-    </html>
+      </html>
   )
 }
-
 
 
 import './globals.css'
